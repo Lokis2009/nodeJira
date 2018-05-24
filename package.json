@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "devstart": "nodemon ./bin/www"
+    "devstart": "nodemon ./bin/www",
+    "deploy": "docker build -t registry.gitlab.com/lokis2009/nodejira . && docker push registry.gitlab.com/lokis2009/nodejira"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -12,7 +13,8 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "request": "^2.87.0"
   },
   "devDependencies": {
     "nodemon": "^1.17.4"

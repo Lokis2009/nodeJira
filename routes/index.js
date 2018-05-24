@@ -1,17 +1,14 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var router = express.Router();
+var app = express();
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/hooks/:hash', function(req, res, next) {
-    res.send(req.params);
-});
-
-router.post('/hooks/:hash', function(req, res, next) {
-    res.send(req.params);
-});
-
 module.exports = router;
+
