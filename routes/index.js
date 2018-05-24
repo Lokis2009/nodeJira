@@ -7,7 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/hooks/:hash', function(req, res, next) {
+    res.send(req.params);
+});
 
+router.post('/hooks/:hash', function(req, res, next) {
     res.send(req.params);
 });
 
